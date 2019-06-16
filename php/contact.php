@@ -3,9 +3,9 @@ $name  = $_REQUEST["name"];
 $email = $_REQUEST["email"];
 $subject   = $_REQUEST["subject"];
 $msg   = $_REQUEST["msg"];
-$to    = "hello@eagleilab.co.za"; // ENTER YOUR EMAIL ADDRESS
+$to    = "secretariat@safnog.org"; // ENTER YOUR EMAIL ADDRESS
 if (isset($email) && isset($name) && isset($msg)) {
-    $email_subject = "$name sent you a message via Asante Africa"; // ENTER YOUR EMAIL SUBJECT
+    $email_subject = "$name sent you a message via SAFNOG-5"; // ENTER YOUR EMAIL SUBJECT
 		$headers = "MIME-Version: 1.0" . "\r\n";
 $headers .= "Content-type:text/html;charset=iso-8859-1" . "\r\n";
 $headers .= "From: ".$name." <".$email.">\r\n"."Reply-To: ".$email."\r\n" ;
