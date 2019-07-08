@@ -38,7 +38,7 @@ $(document).ready(function() {
         $.ajax({
             type: "POST",
             data: dataString,
-            url: "safnog5/php/contact.php",
+            url: "php/contact.php",
             cache: false,
             success: function (d) {
                 $(".form-control").removeClass("success");
