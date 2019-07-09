@@ -1,9 +1,9 @@
-<?
+<?php
 $name  = $_REQUEST["name"];
 $email = $_REQUEST["email"];
 $subject   = $_REQUEST["subject"];
 $msg   = $_REQUEST["msg"];
-$to    = "vinaynaran@gmail.com"; // ENTER YOUR EMAIL ADDRESS
+$to    = "secretariat@safnog.org"; // ENTER YOUR EMAIL ADDRESS
 if (isset($email) && isset($name) && isset($msg)) {
     $email_subject = "$name sent you a message via SAFNOG-5"; // ENTER YOUR EMAIL SUBJECT
 		$headers = "MIME-Version: 1.0" . "\r\n";
