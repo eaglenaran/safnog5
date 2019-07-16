@@ -128,6 +128,14 @@ th {
   height: 50px;
    
 }
+td {
+   width: 50%;
+}
+p.one {
+  border-top: 1px solid grey;
+  
+}
+
 		</style>
 
 	</head>
@@ -393,7 +401,7 @@ a {
     </tr>
     <tr>
       <th scope="row">1530hrs</th>
-      <td colspan="2" class="table-primary text-center">Peering Personals</td>
+      <td colspan="2" class="table-primary text-center"><p class="one">Peering Personals</p></td>
       
     </tr>
      <tr class="table-bordered">
@@ -473,7 +481,7 @@ a {
     </tr>
     <tr>
       <th scope="row">1430hrs<br><br>1500hrs</th>
-      <td colspan="1" class="table-primary text-center">Plenary<br><br>Peering Personals</td>
+      <td colspan="1" class="table-primary text-center">Plenary<br><br><p class="one">Peering Personals</p></td>
       <td class="bg-warning text-center"><br><br>Tutorial</td>
       
     </tr>
@@ -516,12 +524,12 @@ a {
  <div class="container">
   <div class="row">
     <div class="col">
-        <table class="table table-sm">
+        <table class="table table-bordered table-borderless">
   <thead>
     
   </thead>
   <tbody>
-    <tr>
+   <tr class="table-bordered">
       
       <td class="table-primary">Main Ballroom (Kgotla Room)</td>
       <td class="bg-warning">Tutorial Room (Lecture Room 8)</td>
