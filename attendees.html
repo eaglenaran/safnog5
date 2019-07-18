@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
 <!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
@@ -8,7 +9,9 @@
 
 
 <head>
-  <meta charset="utf-8">
+
+
+
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 		<meta name="author" content="Jthemes"/>	
@@ -93,15 +96,16 @@ a {
  
   <script>
   (function() {
-    var jsonAPI = "https://dev.iweek.org.za/json/attendees";
-    $.getJSON( jsonAPI, {format: "json" }).done(function( data ) {
+    var flickerAPI = "http://safnog.org/attendees.json";
+    //var flickerAPI = "https://iweek.org.za/safnog-5-registrations/json";
+    $.getJSON( flickerAPI, {format: "json" }).done(function( data ) {
     var temp = '';
-    var len = data.Attendee.length
+    var len = data.Attendees.length
           for(var i = 0 ; i < len; i++) {
               temp += '<tr>';
-              temp+= '<td>' + data.Attendee[i].Name+ '</td>';
-              temp+= '<td>' + data.Attendee[i].Surname + '</td>';
-              temp+= '<td>' + data.Attendee[i].Company + '</td>';
+              temp+= '<td>' + data.Attendees[i].Name+ '</td>';
+              temp+= '<td>' + data.Attendees[i].Surname + '</td>';
+              temp+= '<td>' + data.Attendees[i].Company + '</td>';
               temp+= '</tr>';          
           }
            $("tbody").append(temp);
