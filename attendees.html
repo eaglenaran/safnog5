@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery.getJSON demo</title>
+  <style>
+  </style>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+ 
+  <script>
+  (function() {
+    var flickerAPI = "http://safnog.org/attendees.json";
+    //var flickerAPI = "https://iweek.org.za/safnog-5-registrations/json";
+    $.getJSON( flickerAPI, {format: "json" }).done(function( data ) {
+    var temp = '';
+    var len = data.Attendees.length
+          for(var i = 0 ; i < len; i++) {
+              temp += '<tr>';
+              temp+= '<td>' + data.Attendees[i].Name+ '</td>';
+              temp+= '<td>' + data.Attendees[i].Surname + '</td>';
+              temp+= '<td>' + data.Attendees[i].Company + '</td>';
+              temp+= '</tr>';          
+          }
+           $("tbody").append(temp);
+      });
+  })();
+  </script>
+
+</head>
+<body>
+
+<div></div>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Surname</th>
+      <th>Company</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+
+</body>
+</html>
+
