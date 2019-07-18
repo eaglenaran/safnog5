@@ -1,24 +1,23 @@
-<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>jQuery.getJSON demo</title>
+  <title>SAFNOG Attendee List</title>
   <style>
   </style>
   <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
  
   <script>
   (function() {
-    var flickerAPI = "http://safnog.org/attendees.json";
-    //var flickerAPI = "https://iweek.org.za/safnog-5-registrations/json";
+    //var flickerAPI = "http://safnog.org/attendees.json";
+    var flickerAPI = "https://dev.iweek.org.za/json/attendees";
     $.getJSON( flickerAPI, {format: "json" }).done(function( data ) {
     var temp = '';
-    var len = data.Attendees.length
+    var len = data.Attendee.length
           for(var i = 0 ; i < len; i++) {
               temp += '<tr>';
-              temp+= '<td>' + data.Attendees[i].Name+ '</td>';
-              temp+= '<td>' + data.Attendees[i].Surname + '</td>';
-              temp+= '<td>' + data.Attendees[i].Company + '</td>';
+              temp+= '<td>' + data.Attendee[i].Name+ '</td>';
+              temp+= '<td>' + data.Attendee[i].Surname + '</td>';
+              temp+= '<td>' + data.Attendee[i].Company + '</td>';
               temp+= '</tr>';          
           }
            $("tbody").append(temp);
