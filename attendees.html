@@ -92,27 +92,6 @@ a {
     color: #C61B2C;
 }
   </style>
-  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
- 
-  <script>
-  (function() {
-    var flickerAPI = "http://safnog.org/attendees.json";
-    //var flickerAPI = "https://iweek.org.za/safnog-5-registrations/json";
-    $.getJSON( flickerAPI, {format: "json" }).done(function( data ) {
-    var temp = '';
-    var len = data.Attendees.length
-          for(var i = 0 ; i < len; i++) {
-              temp += '<tr>';
-              temp+= '<td>' + data.Attendees[i].Name+ '</td>';
-              temp+= '<td>' + data.Attendees[i].Surname + '</td>';
-              temp+= '<td>' + data.Attendees[i].Company + '</td>';
-              temp+= '</tr>';          
-          }
-           $("tbody").append(temp);
-      });
-  })();
-  </script>
-
 </head>
 <body>
     <!-- PRELOADER SPINNER
@@ -159,13 +138,13 @@ a {
 						    </span>	
 					   		<ul class="navbar-nav ml-auto">
 					   		    
-					     		<li class="nav-item nl-simple"><a class="nav-link" href="index.html">About</a></li>
-					     		<li class="nav-item nl-simple"><a class="nav-link" href="#">Venue</a></li>
+					     		<li class="nav-item nl-simple"><a class="nav-link" href="index.html#content-1">About</a></li>
+					     		<li class="nav-item nl-simple"><a class="nav-link" href="index.html#services-3">Venue</a></li>
 					     	
 					     		<li class="nav-item nl-simple"><a class="nav-link" href="call-for-papers.html">Papers</a></li> 
-					     		<li class="nav-item nl-simple"><a class="nav-link" href="#content-3">Agenda</a></li> 
+					     		<li class="nav-item nl-simple"><a class="nav-link" href="index.html#content-3">Agenda</a></li> 
 					     		<li class="nav-item nl-simple"><a class="nav-link" href="sponsors.html">Sponsorship</a></li>
-					     		<li class="nav-item nl-simple"><a class="nav-link" href="downloads/safnog-5-attendees.pdf">Attendees</a></li>
+					     		<li class="nav-item nl-simple"><a class="nav-link" href="#services-3">Attendees</a></li>
 					     		
 					     			<li class="nav-item nl-simple"><a class="nav-link" href="#contacts-1">Contact</a></li>
 					     						     									    							    
@@ -248,26 +227,13 @@ a {
 							
 									</div>
 					</div>	 <!-- END SECTION TITLE -->	
-
+                                       <div id="json_table" ></div>
 
 			 		
 			 	</div>	   <!-- End container -->		
 			</section>	<!-- END SERVICES-2 -->
 
-<div></div>
 <div class="container">
-  
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Surname</th>
-      <th>Company</th>
-    </tr>
-  </thead>
-  <tbody>
-  </tbody>
-</table><br>
 
 </div>
 </div>
@@ -510,7 +476,12 @@ a {
 
 		<!-- EXTERNAL SCRIPTS
 		============================================= -->	
-		<script src="js/jquery-3.3.1.min.js"></script>
+	        <script
+                       src="https://code.jquery.com/jquery-3.4.1.js"
+                       integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+                       crossorigin="anonymous">
+		</script>	
+		<!--	<script src="js/jquery-3.3.1.min.js"></script> -->
 		<script src="js/bootstrap.min.js"></script>	
 		<script src="js/fontawesome.js"></script>	
 		<script src="js/modernizr.custom.js"></script>
@@ -532,7 +503,7 @@ a {
 				
 		<!-- Custom Script -->		
 		<script src="js/custom.js"></script>	
-
+                <script type="text/javascript" src="js/getattendees.js"></script>
 		<script>
 			new WOW().init();
 		</script>	
@@ -557,8 +528,11 @@ a {
 			})();
 		</script>
 		-->
-
-		
+<script>
+$(document).ready(function(){
+	getAttendees();
+});
+</script>
 
 	</body>
 
