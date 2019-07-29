@@ -1,4 +1,4 @@
-
+<?php include "php/showattendees.php" ?>
 <!DOCTYPE html>
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
 <!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
@@ -24,7 +24,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Attendees - SAFNOG-5 & iWeek 2019" />
 <meta property="og:description" content="List of registered attendees." />
-<meta property="og:url" content="http://www.safnog.org/attendees.html" />
+<meta property="og:url" content="http://www.safnog.org/attendees.php" />
 <meta property="og:site_name" content="SAFNOG" />
 
 <meta property="og:image" content="http://www.safnog.org/images/travel-safnog5.png
@@ -96,12 +96,11 @@ a {
 <body>
     <!-- PRELOADER SPINNER
 		============================================= -->		
-		<div id="loader-wrapper">
+	  	<div id="loader-wrapper">
 			<div id="loader">
 				<div class="cssload-spinner"></div>
 			</div>
 		</div>
-
 
 
 
@@ -227,8 +226,9 @@ a {
 							
 									</div>
 					</div>	 <!-- END SECTION TITLE -->	
-                                       <div id="json_table" ></div>
-
+					 <div id="json_table" >
+					   <?php echo ShowAttendees::showAttendeeTable(); ?>
+                                         </div>
 			 		
 			 	</div>	   <!-- End container -->		
 			</section>	<!-- END SERVICES-2 -->
@@ -503,7 +503,7 @@ a {
 				
 		<!-- Custom Script -->		
 		<script src="js/custom.js"></script>	
-                <script type="text/javascript" src="js/getattendees.js"></script>
+                <!-- <script type="text/javascript" src="js/getattendees.js"></script> -->
 		<script>
 			new WOW().init();
 		</script>	
@@ -528,12 +528,13 @@ a {
 			})();
 		</script>
 		-->
-<script>
+<!--
+	<script>
 $(document).ready(function(){
 	getAttendees();
 });
 </script>
-
+-->
 	</body>
 
 
